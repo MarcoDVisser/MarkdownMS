@@ -1,5 +1,5 @@
 ####################
-# Makefile for automated CV creation in various formats
+# Makefile for automated ms creation in various formats
 ####################
 
 
