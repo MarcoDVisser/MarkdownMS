@@ -2,7 +2,6 @@
 # Makefile for automated ms creation in various formats
 ####################
 
-
 ## Setup 
 DATE= $(shell date +"%m-%d-%Y")
 CV_DIR = .
@@ -15,9 +14,9 @@ WORD = $(CV_DIR)/Word/$(BASENAME)_$(DATE).docx
 ## functions
 RNAME = cp '$<' '$@' 
 PDOC = pandoc -s --smart '$<' -o '$@'
-KNITMD = Rscript --vanilla -e "library(markdown);library(knitr); knit('$<','$@')"
-
-all: $(MD) $(PDF) $(WORD)
+KNIT = Rscript --vanilla -e "library(markdown,lib='~/R/lib');require(knitr,lib='~/R/lib'); knit('$<','$@')"
+PDFLATEX = pdflatex -synctex=1 -interaction=nonstopmode '$<' '$@'
+all: $(MD) $(PDF) $(PDF2) $(WORD)
 
 #########################
 ## main markdownx
@@ -25,7 +24,7 @@ all: $(MD) $(PDF) $(WORD)
 ## 	: RULES
 
 $(MD):$(MASTER)
-	$(KNITMD)
+	$(KNIT)
 
 $(PDF):$(MD)
 	$(PDOC)

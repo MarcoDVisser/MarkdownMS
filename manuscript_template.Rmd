@@ -17,9 +17,9 @@ bibliography: references.bib
 ---
 
 ```{r, echo=FALSE}
-  library(knitcitations); cleanbib()
+  library(knitcitations,lib='~/R/lib'); cleanbib()
   cite_options(citation_format = "pandoc", check.entries=FALSE)
-  library(bibtex)
+  library(bibtex,lib='~/R/lib')
 ```
 
 # Abstract
@@ -45,7 +45,7 @@ $$ \frac{1}{\sqrt{2\pi}\sigma}e^{-(x-\mu_i)^2/(2\sigma^2)} $$
 Tables show also work without problems:
 
 ```{r kable, echo=FALSE}
-library(knitr)
+library(knitr,lib='~/R/lib')
 
 x <- rnorm(100)
 y <- 2*x + rnorm(100)
@@ -55,7 +55,7 @@ caption="This is a GLM summary table.")
 ```
 
 ```{r xtable, results="asis", echo=FALSE, eval=FALSE, message=FALSE}
-library(xtable)
+library(xtable,lib='~/R/lib')
 tab <- xtable(summary(out)$coef, digits=c(0, 2, 2, 1, 2), 
               caption="This is a GLM summary table.")
 print(tab, type="latex")
@@ -63,7 +63,7 @@ print(tab, type="latex")
 
 As should any graphics:
 
-```{r testPlot, echo=FALSE, fig.cap="Relationship between x and y. The solid line is least-squares linear regression.", fig.width=4, fig.height=4}
+```{r testgPlot, echo=FALSE, fig.cap="Relationship between x and y. The solid line is least-squares linear regression.", fig.width=4, fig.height=4}
   plot(x, y)
   abline(out)
 ```
@@ -74,8 +74,9 @@ When we cite anyone it should work too like R for instance `r citep(citation())`
 
 # References
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE} 
+```{r, warning=FALSE, message=FALSE, echo=FALSE,asis=TRUE} 
   write.bibtex(file="references.bib")
+  read.bibtex("references.bib")
 ```
 
 
