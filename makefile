@@ -18,7 +18,7 @@ RNAME = cp '$<' '$@'
 PDOC = pandoc -s --smart '$<' -o '$@'
 KNIT = Rscript --vanilla -e "library(markdown,lib='~/R/lib');require(knitr,lib='~/R/lib'); knit('$<','$@')"
 PDFLATEX = pdflatex -synctex=1 -interaction=nonstopmode '$<' '$@'
-all: $(MD) $(PDF) $(PDF2) $(WORD)
+all: $(MD) $(PDF) $(WORD)
 
 #########################
 ## main markdownx
