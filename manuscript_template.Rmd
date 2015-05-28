@@ -1,6 +1,6 @@
 ---
 title: "Manuscript template in R markdown"
-date: "14/04/2015"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   pdf_document:
     fig_caption: yes
@@ -12,7 +12,8 @@ output:
     highlight: pygments
     number_sections: yes
     theme: cerulean
-csl: mee.csl
+  md_document:
+    toc: true
 bibliography: references.bib
 ---
 
@@ -74,10 +75,6 @@ When we cite anyone it should work too like R for instance `r citep(citation())`
 
 # References
 
-```{r, warning=FALSE, message=FALSE, echo=FALSE,asis=TRUE} 
-  write.bibtex(file="references.bib")
-  read.bibtex("references.bib")
-```
 
 
 

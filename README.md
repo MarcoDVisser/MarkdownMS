@@ -1,4 +1,4 @@
-# Markdown MS
+# Markdown MS[# Markdown MS](##-markdown-ms)
 
 ---
 A skeleton academic manuscript in markdown. With this repository I want to create the perfect template for academic writing. 
