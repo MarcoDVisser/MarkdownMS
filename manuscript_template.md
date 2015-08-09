@@ -49,16 +49,16 @@ Tables show also work without problems:
 <tbody>
 <tr class="odd">
 <td align="left">(Intercept)</td>
-<td align="right">-0.02</td>
+<td align="right">-0.11</td>
 <td align="right">0.10</td>
-<td align="right">-0.17</td>
-<td align="right">0.87</td>
+<td align="right">-1.10</td>
+<td align="right">0.27</td>
 </tr>
 <tr class="even">
 <td align="left">x</td>
-<td align="right">2.01</td>
-<td align="right">0.09</td>
-<td align="right">21.51</td>
+<td align="right">2.07</td>
+<td align="right">0.11</td>
+<td align="right">19.43</td>
 <td align="right">0.00</td>
 </tr>
 </tbody>
@@ -72,15 +72,13 @@ regression.](manuscript_template_files/figure-markdown_strict/testgPlot-1.png)
 Results and discussion
 ======================
 
-When we cite anyone it should work too like R for instance (R Core Team
-2014), and we used package knitcitations\` (Boettiger 2014).
+When we cite anyone it should work too like R for instance (<span
+class="citeproc-not-found"
+data-reference-id="R_Core_Team_2015">**???**</span>), and we used
+package knitcitations\` (Boettiger 2014).
 
 References
 ==========
 
 Boettiger, Carl. 2014. *Knitcitations: Citations for Knitr Markdown
 Files*. <http://CRAN.R-project.org/package=knitcitations>.
-
-R Core Team. 2014. *R: A Language and Environment for Statistical
-Computing*. Vienna, Austria: R Foundation for Statistical Computing.
-<http://www.R-project.org/>.
